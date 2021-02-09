@@ -1,0 +1,162 @@
+.info-section{
+	padding: 130px 0 100px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+
+	@media screen and (min-width: 992px){
+		background-attachment: fixed;
+	}
+
+	.section-inner{
+		display: grid;
+		grid-template-columns: repeat(2, 470px);
+		justify-content: flex-end;
+		grid-gap: 45px;
+	}
+
+	@media screen and (max-width: 1229px){
+		.section-inner{
+			grid-template-columns: repeat(2, 340px);
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.section-inner{
+			grid-template-columns: 1fr;
+		}
+	}
+}
+
+.big-info-card{
+	position: relative;
+
+	.section-caption{
+		position: absolute;
+		top: 35px;
+		right: calc(100% - 70px);
+		white-space: nowrap;
+		z-index: 2;
+
+		.sc-title{
+			padding-bottom: 0;
+
+			&:before{
+				width: 100%;
+			}
+		}
+	}
+
+	.card-image{
+		width: 100%;
+		position: relative;
+		margin-bottom: 30px;
+		
+		&:before{
+			content: '';
+			display: block;
+			padding-top: 74.235%;
+		}
+		
+		img{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			object-fit: cover;
+			object-position: center center;
+		}
+	}
+
+	.card-caption{
+		font-size: 48px;
+		text-transform: uppercase;
+		font-weight: bold;
+		line-height: 1;
+		color: #fff;
+		margin-bottom: 15px;
+		font-family: $second-font;
+	}
+
+	.card-text{
+		font-size: 16px;
+		line-height: 1.875;
+	}
+
+	&:nth-child(1){
+		margin-top: 240px;
+	}
+
+	@media screen and (max-width: 991px){
+		.section-caption{
+			top: 115px;
+
+			.sc-title{
+				padding-bottom: 10px;
+			}
+		}
+
+		.card-image{
+			width: 70%;
+		}
+
+		.card-content{
+			max-width: 70%;
+		}
+
+		&:nth-child(2){
+			text-align: right;
+
+			.section-caption{
+				left: 50%;
+			}
+		}
+
+		&:nth-child(1){
+			order: 2;
+			margin-top: 60px;
+
+			.card-image{
+				margin-left: auto;
+			}
+
+			.section-caption{
+				left: 0;
+			}
+
+			.card-content{
+				margin-left: auto;
+			}
+		}
+
+		.card-caption{
+			color: $primary;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		.section-caption{
+			top: 90px;
+		}
+
+		.card-caption{
+			font-size: 24px;
+		}
+
+		.card-text{
+			font-size: 14px;
+		}
+
+		.card-content{
+			max-width: 100%;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		.section-caption{
+			top: calc( (100vw - 30px) * 0.7 * 0.25);
+		}
+	}
+}

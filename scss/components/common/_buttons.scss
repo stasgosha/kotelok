@@ -1,0 +1,54 @@
+.btn{
+	appearance: none;
+	box-shadow: none;
+	border: 2px solid #e24c4a;
+	background: #e24c4a;
+	color: #fff;
+	font-family: $second-font;
+	white-space: nowrap;
+	font-size: 18px;
+	line-height: 1.222;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 50px;
+	padding: 10px 30px;
+
+	&:hover,
+	&:focus{
+		background: $primary;
+		border-color: $primary;
+	}
+
+	&.btn-light{
+		background: transparent;
+		color: $primary;
+		border-color: $primary;
+
+		&:hover,
+		&:focus{
+			background: $primary;
+			color: #fff;
+		}
+	}
+
+	&.btn-small{
+		min-height: 32px;
+		font-size: 14px;
+		padding: 10px 20px;
+	}
+
+	&.fullwidth{
+		width: 100%;
+	}
+
+	@media screen and (max-width: 575px){
+		&.xs-fullwidth{
+			width: 100%;
+		}
+	}
+}

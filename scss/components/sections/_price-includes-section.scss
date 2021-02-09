@@ -1,0 +1,14 @@
+.price-includes-section{
+	padding: 105px 0 120px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+
+	@media screen and (min-width: 992px){
+		background-attachment: fixed;
+	}
+
+	.section-caption{
+		margin-bottom: 60px;
+	}
+}

@@ -1,0 +1,25 @@
+[class^="icon-"], [class*=" icon-"]{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.icon-phone{
+	background: url(../img/icons/phone.png);
+	width: 16px;
+	height: 16px;
+}
+
+.icon-email{
+	background: url(../img/icons/email.png);
+	width: 17px;
+	height: 13px;
+}
+
+.icon-location{
+	background: url(../img/icons/location.png);
+	width: 14px;
+	height: 18px;
+}

@@ -1,0 +1,159 @@
+.footer{
+	padding: 40px 0;
+	overflow: hidden;
+	background: #191612;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+
+	@media screen and (max-width: 767px){
+		position: static;
+	}
+
+	.footer-inner{
+		display: flex;
+
+		.footer-block{
+			flex: auto;
+
+			&:nth-child(1){
+				position: relative;
+				padding-right: 80px;
+				z-index: 5;
+
+				&:before{
+					content: '';
+					display: block;
+					width: 50vw;
+					height: calc(100% + 50px * 2);
+					position: absolute;
+					right: 0;
+					top: -50px;
+					background: #201d18;
+					z-index: -1;
+				}
+			}
+
+			&:nth-child(2){
+				padding-left: 100px;
+				padding-right: 50px;
+			}
+
+			&:nth-child(3){
+				padding-left: 50px;
+			}
+
+			@media screen and (max-width: 1229px){
+				&:nth-child(1){
+					padding-right: 30px;
+				}
+
+				&:nth-child(2){
+					padding-left: 30px;
+					padding-right: 30px;
+				}
+
+				&:nth-child(3){
+					padding-left: 30px;
+				}
+			}
+		}
+	}
+
+	.logo-block{
+		margin-bottom: 27px;
+	}
+
+	.brand-slogan{
+		font-size: 24px;
+		font-family: $second-font;
+		margin-bottom: 45px;
+		line-height: 1.2;
+	}
+
+	.footer-caption{
+		font-size: 18px;
+		line-height: 1.22;
+		font-family: $second-font;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-bottom: 30px;
+		letter-spacing: 0.05em;
+	}
+
+	.contacts-list{
+		display: grid;
+		grid-gap: 15px;
+		grid-auto-rows: min-content;
+	}
+
+	@media screen and (max-width: 767px){
+		padding: 0 0 20px;
+
+		.footer-inner{
+			flex-direction: column;
+
+			.footer-block{
+				padding: 40px 0 !important;
+
+				&:nth-child(1){
+					&:before{
+						width: 100vw;
+						height: 100%;
+						top: 0;
+						right: auto;
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}
+			}
+		}
+
+		.brand-slogan{
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.footer-nav{
+	ul{
+		font-size: 18px;
+		line-height: 1.22;
+		font-family: $second-font;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 0.05em;
+
+		li{
+			margin-bottom: 30px;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+
+			a{
+				color: inherit;
+
+				&:hover,
+				&:focus{
+					color: $primary;
+				}
+			}
+
+			&.current-menu-item,
+			&.current-menu-parent{
+				a{
+					color: $primary;
+					text-decoration: underline;
+				}
+			}
+			
+			&.current-menu-item{
+				a{
+					cursor: default;
+				}
+			}
+		}
+	}
+}

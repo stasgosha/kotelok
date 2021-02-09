@@ -1,0 +1,211 @@
+.about-page-section{
+	position: relative;
+	background: #13110f;
+	padding: 60px 0 90px;
+	overflow: hidden;
+
+	&:before{
+		content: '';
+		display: block;
+		width: 100%;
+		min-width: 1920px;
+		height: 100%;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		background: url(../img/backgrounds/contacts-page-lines.png) no-repeat right bottom;
+	}
+
+	&:after{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 200px;
+		position: absolute;
+		left: 0;
+		bottom: 99%;
+		background: inherit;
+	}
+
+	.container{
+		position: relative;
+		z-index: 2;
+	}
+
+	.section-caption{
+		margin-bottom: 40px;
+	}
+
+	.section-text{
+		font-size: 16px;
+		line-height: 1.45;
+		margin-bottom: 45px;
+
+		p{
+			margin-bottom: 1.45em;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.section-content{
+		padding-left: 100px;
+		position: relative;
+
+		&:before{
+			content: '';
+			display: block;
+			width: 1126px;
+			height: 7289px;
+			position: absolute;
+			right: calc(100% - 46px);
+			top: 0;
+			background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1126 7289'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1125 43h-16v9h16v-9zm-17-1v11h18V42h-18z' fill='%23fff'/%3E%3Cpath d='M1109 47h16v1h-16v-1z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1076 1v16h9V1h-9zm-1 17h11V0h-11v18z' fill='%23fff'/%3E%3Cpath d='M1080 17V1h1v16h-1z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M701 1v16h9V1h-9zm-1 17h11V0h-11v18z' fill='%23fff'/%3E%3Cpath d='M705 17V1h1v16h-1z' fill='%23fff'/%3E%3Cpath d='M1109 26c0-5-4-9-9-9v-1c6 0 10 4 10 10h-1z' fill='%23fff'/%3E%3Cpath d='M1124 26c0-13-11-24-24-24V1c14 0 25 11 25 25h-1z' fill='%23fff'/%3E%3Cpath fill='%23fff' d='M1086 1h14v1h-14z'/%3E%3Cpath fill='%23fff' d='M1086 16h14v1h-14z'/%3E%3Cpath fill='%23fff' d='M1109 42V26h1v16z'/%3E%3Cpath fill='%23fff' d='M1124 42V26h1v16z'/%3E%3Cpath fill='%23fff' d='M711 1h364v1H711z'/%3E%3Cpath fill='%23fff' d='M0 1h700v1H0z'/%3E%3Cpath fill='%23fff' d='M711 16h364v1H711z'/%3E%3Cpath fill='%23fff' d='M0 16h700v1H0z'/%3E%3Cpath fill='%23fff' d='M1110 53h-1v7236h1z'/%3E%3Cpath fill='%23fff' d='M1125 53h-1v7236h1z'/%3E%3C/svg%3E");
+			pointer-events: none;
+			opacity: .36;
+		}
+	}
+
+	.section-stages{
+		.stage{
+			margin-bottom: 60px;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+
+		.stage-caption{
+			margin-left: -88px;
+			padding-left: 88px;
+			position: relative;
+			color: #fff;
+			font-family: $second-font;
+
+			.btn-icon{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: #13110f url(../img/icons/valve.svg) no-repeat center center / contain;
+				transition: all 1.5s;
+				z-index: 5;
+
+				.circle{
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					width: 50px;
+					height: 50px;
+					border-radius: 50%;
+					border: 1px solid #fff;
+					transition: all 1s;
+					animation: circles 2s infinite;
+					animation-fill-mode: both;
+					z-index: -1;
+					pointer-events: none;
+
+					&.circle-2{
+						animation-delay: 0.5s;
+					}
+
+					&.circle-3{
+						animation-delay: 1.5s;
+					}
+
+					@keyframes circles{
+						from {
+							opacity: .4;
+						}
+
+						to{
+							opacity: .03;
+							transform: translate(-50%, -50%) scale(1.92);
+						}
+					}
+				}
+			}
+
+			.btn-text{
+				position: relative;
+				font-size: 36px;
+				line-height: 50px;
+				display: block;
+				
+				&:after{
+					content: '';
+					display: block;
+					width: 0;
+					height: 2px;
+					background: $primary;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					transition: all 1.5s;
+				}
+			}
+
+			&:hover,
+			&:focus{
+				color: $primary;
+				outline: none;
+			}
+
+			&.active{
+				color: $primary;
+
+				.btn-icon{
+					transform: rotate(calc(720deg - 45deg));
+
+					.circle{
+						opacity: 0 !important;
+					}
+				}
+
+				.btn-text{
+					&:after{
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.stage-hidden-content{
+			padding-top: 20px;
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		.section-content{
+			padding-left: 30px;
+
+			&:before{
+				right: calc(100% - 16px);
+			}
+		}
+
+		.section-stages{
+			.stage-caption{
+				padding-left: 53px;
+				margin-left: -43px;
+
+				.btn-icon{
+					top: 5px;
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
+
+		.section-caption{
+			margin-bottom: 20px;
+		}
+	}
+}

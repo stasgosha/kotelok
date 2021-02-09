@@ -1,0 +1,238 @@
+.modal{
+	display: none;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(#000, .67);
+	overflow-y: auto;
+	overscroll-behavior-y: contain;
+	z-index: 999;
+	// transform: scale(0);
+	visibility: hidden;
+	transition: visibility .4s, opacity .4s;
+	cursor: pointer;
+	opacity: 0;
+
+	.modal-dialog{
+		width: calc(100% - 15px * 2);
+		max-width: 520px;
+		margin: 60px auto;
+		cursor: default;
+		flex: none;
+		position: relative;
+		transform: translateY(-100%);
+		opacity: 0;
+		visibility: hidden;
+		transition: all $t;
+		transition-delay: .2s;
+	}
+
+	&.visible{
+		visibility: visible;
+		opacity: 1;
+
+		.modal-dialog{
+			transform: translateY(0);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&.video-modal{
+		.modal-dialog{
+			width: auto;
+			max-width: 70vw;
+
+			@media screen and (max-width: 991px){
+				max-width: 90vw;
+			}
+		}
+
+		.modal-content{
+			background: transparent;
+			padding: 0;
+		}
+
+		.modal-video{
+			width: 100%;
+			position: relative;
+
+			&:before{
+				content: '';
+				display: block;
+				padding-top: 56.25%;
+			}
+
+			iframe{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: block;
+				border: 0;
+			}
+
+			&.vimeo{
+				&:before{
+					padding-top: 52%;
+				}
+			}
+		}
+	}
+
+	.modal-content{
+		background: #fff;
+		border-radius: 2px;
+		position: relative;
+		padding: 45px 80px 35px;
+
+		@media screen and (max-width: 575px){
+			padding: 30px 30px 35px;
+		}
+	}
+
+	.modal-text{
+		text-align: center;
+	}
+}
+
+.modal-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 60px;
+	height: 60px;
+	// border-radius: 50%;
+	opacity: 1;
+	transition: all $t;
+	appearance: none;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+
+	&:before,
+	&:after{
+		content: '';
+		display: block;
+		width: 22px;
+		height: 2px;
+		background: #fff;
+		position: absolute;
+		left: calc(50% - 22px / 2);
+		top: calc(50% - 2px / 2);
+		transition: all $t;
+		border-radius: 1px;
+	}
+
+	@media screen and (max-width: 575px){
+		width: 42px;
+		height: 42px;
+
+		&:before,
+		&:after{
+			width: 14px;
+			left: calc(50% - 14px / 2);
+		}
+	}
+
+	&:before{
+		transform: rotate(-45deg);
+	}
+
+	&:after{
+		transform: rotate(45deg);
+	}
+
+	&:hover{
+		&:before,
+		&:after{
+			background: $primary;
+		}
+	}
+
+	.video-modal &{
+		left: 100%;
+		top: -17px;
+		right: auto;
+
+		&:before,
+		&:after{
+			background: #fff;
+		}
+
+		&:hover{
+			&:before,
+			&:after{
+				background: $primary;
+			}
+		}
+	}
+}
+
+.modal-caption{
+	font-size: 26px;
+	line-height: 1.5;
+	color: $accent;
+	text-transform: uppercase;
+	font-weight: bold;
+	position: relative;
+	margin-bottom: 26px;
+	padding-left: 18px;
+
+	&:before{
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 10px 10px 0;
+		border-color: transparent $primary transparent transparent;
+		position: absolute;
+		left: 0;
+		top: 0.4em;
+	}
+
+	@media screen and (max-width: 575px){
+		font-size: 20px;
+	}
+}
+
+.order-form{
+	.btn{
+		min-width: 155px;
+	}
+
+	.form-row{
+		margin-bottom: 24px;
+
+		&.last{
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		@media screen and (max-width: 1229px){
+			margin-bottom: 18px;
+		}
+
+		@media screen and (max-width: 575px){
+			&.last{
+				display: block;
+			}
+
+			.fake-label{
+				font-size: 10px;
+			}
+		}
+	}
+
+	textarea{
+		height: 85px;
+	}
+}

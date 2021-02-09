@@ -1,0 +1,112 @@
+.form{
+	.input-field,
+	textarea{
+		border: 1px solid rgba(#fff, .3);
+		appearance: none;
+		background: transparent;
+		border-radius: 0;
+		flex: auto;
+		height: 50px;
+		font-size: 16px;
+		color: #fff;
+		font-family: inherit;
+		font-weight: 400;
+		padding: 0 18px;
+		outline: none !important;
+		transition: all $t;
+		width: 100%;
+	}
+
+	textarea{
+		resize: none;
+		padding: 15px 20px;
+		height: 125px;
+		display: block;
+
+		@media screen and (max-width: 767px){
+			height: 100px;
+			padding: 10px 12px;
+		}
+	}
+}
+
+.input-wrapper{
+	position: relative;
+
+	label{
+		position: absolute;
+		left: 0;
+		top: 0;
+		min-height: 50px;
+		line-height: 50px;
+		display: block;
+		padding: 0 18px;
+		font-size: 16px;
+		color: #fff;
+		font-family: inherit;
+
+		strong{
+			font-weight: inherit;
+			color: $primary;
+		}
+	}
+
+	input:focus + label,
+	input.not-empty + label{
+		opacity: 0;
+	}
+}
+
+.checkbox{
+	position: relative;
+
+	.fake-label{
+		font-size: 16px;
+		line-height: 20px;
+		color: #fff;
+		padding-left: 34px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&:before{
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			border: 2px solid #fff;
+			background: #201914;
+			position: absolute;
+			left: 0;
+			top: 0;
+			transition: all $t;
+		}
+
+		&:after{
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8'%3E%3Cpath d='M3.83 7.74a.5.5 0 01-.72 0L.22 4.85a.77.77 0 010-1.08L.6 3.4c.3-.3.78-.3 1.08 0l1.8 1.8L8.33.34c.3-.3.79-.3 1.08 0l.37.37c.3.3.3.78 0 1.08L3.83 7.74z' fill='%23E30613'/%3E%3C/svg%3E") no-repeat center center / contain;
+			background-size: 12px 9px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			transition: all $t;
+		}
+
+		.label-price{
+			white-space: nowrap;
+		}
+	}
+
+	input:checked + .fake-label:before{
+		border-color: $primary;
+	}
+
+	input:checked + .fake-label:after{
+		opacity: 1;
+	}
+}

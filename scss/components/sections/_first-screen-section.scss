@@ -1,0 +1,68 @@
+.first-screen-section{
+	background: #13110f;
+
+	.logo-block{
+		margin-bottom: 50px;
+	}
+
+	.section-caption{
+		.sc-subtitle{
+			max-width: 480px;
+		}
+	}
+
+	.section-inner{
+		display: flex;
+		align-items: center;
+		min-height: 100vh;
+	}
+
+	.section-content{
+		max-width: 700px;
+		padding: 150px 0;
+		position: relative;
+		z-index: 5;
+	}
+
+	.section-animation{
+		align-self: stretch;
+		margin-right: -180px;
+		width: 505px;
+		display: flex;
+		align-items: flex-end;
+
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		position: relative;
+
+		.section-content{
+			width: 100%;
+			text-align: center;
+		}
+
+		.section-caption{
+			text-align: center;
+			align-items: center;
+
+			.sc-subtitle{
+				&:before{
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+
+		.section-animation{
+			position: absolute;
+			width: 300px;
+			right: 0;
+			bottom: 0;
+		}
+	}
+}

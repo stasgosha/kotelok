@@ -1,0 +1,16 @@
+.service-cost-section{
+	padding: 120px 0;
+	background-size: cover;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+
+	@media screen and (min-width: 992px){
+		background-attachment: fixed;
+	}
+
+	.section-caption{
+		.sc-title{
+			padding-bottom: 15px;
+		}
+	}
+}

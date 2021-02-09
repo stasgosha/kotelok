@@ -1,0 +1,24 @@
+// Fonts
+$main-font: 'Open Sans', Arial, sans-serif;
+$second-font: 'Helios Cond', $main-font;
+
+// Colors
+$red: #e83535;
+
+$gray: #fff;
+$dark: #fff;
+$light: #fff;
+
+$text-color: $light;
+$text-dark: $dark;
+$text-light: $light;
+
+$primary: $red;
+$accent: $red;
+
+// Params
+$body-bg: #13110f; // site background
+$t: .3s; // animation duration
+$r: 0; // default border radius
+$shadow: 0px 4px 35px rgba(#000, 0.09); // default card shadow
+$gradient: linear-gradient(to bottom, #deb986, #d9aa6d 100%)

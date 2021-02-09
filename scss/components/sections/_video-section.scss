@@ -1,0 +1,36 @@
+.video-section{
+	height: 100vh;
+	min-height: 600px;
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 90px;
+
+	@media screen and (min-width: 992px){
+		background-attachment: fixed;
+	}
+
+	.play-btn{
+		width: 128px;
+		height: 128px;
+		border-radius: 50%;
+		margin-bottom: 10vh;
+		background: url(../img/icons/play-bg.png) no-repeat center center / contain;
+		transition: all $t;
+
+		&:hover,
+		&:focus{
+			outline: none;
+			transform: scale(1.1);
+		}
+	}
+
+	.section-content{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}

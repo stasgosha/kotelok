@@ -1,0 +1,341 @@
+.schema-section{
+	padding: 105px 0 120px;
+	background: #191612;
+
+	.section-caption{
+		align-items: flex-end;
+		margin-bottom: calc(-60px * 1.33 * 2);
+	}
+
+	img{
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.schema-component{
+	position: relative;
+	// background: url(../img/content-images/schema.png) no-repeat left top / contain;
+	width: 100%;
+	height: 656px;
+
+	&:before{
+		content: '';
+		display: block;
+		width: 981px;
+		height: 465px;
+		background: url(../img/content-images/schema-group.jpg) no-repeat center center / contain;
+		position: absolute;
+		left: 205px;
+		top: 190px;
+	}
+
+	&:after{
+		content: '';
+		display: block;
+		width: 3px;
+		height: 52px;
+		background: #292521;
+		position: absolute;
+		left: 1015px;
+		top: 139px;
+	}
+
+	.item{
+		background: #8c8c8c;
+		border: 2px solid #8c8c8c;
+		border-radius: 5px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 154px;
+		height: 68px;
+		position: absolute;
+		transition: all $t;
+		color: #fff;
+		opacity: .13;
+
+		&:after{
+			transition: all $t;
+			content: '';
+			display: block;
+			opacity: .3;
+			position: absolute;
+			background: #fff;
+			z-index: -1;
+		}
+
+		&.gray{
+			opacity: 1;
+		}
+
+		&.active{
+			border-color: $primary;
+			background: #110f0d;
+			color: #fff;
+			box-shadow: 0 5px 15px rgba(#1e150e, .25);
+			opacity: 1;
+			z-index: 3;
+
+			&:after{
+				opacity: .5;
+			}
+
+			&.gray{
+				border-color: #4ce24a;
+				background: #1d5d1c;
+			}
+		}
+
+		&#energy-connection{ 	left: 0; 		top: 550px; }
+		&#energy-shield{ 		left: 253px; 	top: 550px; }
+		&#boiler{ 				left: 253px; 	top: 387px; }
+		&#pump-group{ 			left: 508px; 	top: 387px; }
+		&#boiler-2{ 			left: 762px; 	top: 387px; }
+		&#hydroarrow{ 			left: 1015px; 	top: 387px; }
+		&#water-in{ 			left: 0; 		top: 218px; }
+		&#collector{ 			left: 253px; 	top: 218px; }
+		&#tank{ 				left: 508px; 	top: 218px; }
+		&#radiators{ 			left: 0; 		top: 0; }
+		&#kitchen{ 				left: 253px; 	top: 0; }
+		&#floor{ 				left: 508px; 	top: 0; }
+
+		&#energy-connection,
+		&#water-in{
+			&:after{
+				width: 100px;
+				height: 1px;
+				left: calc(100% + 1px);
+				top: 50%;
+			}
+		}
+
+		&#energy-shield{
+			&:after{
+				width: 513px;
+				height: 129px;
+				background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 513 129'%3E%3Cpath fill='%23fff' d='M85 128h428v1H85z'/%3E%3Cpath fill='%23fff' d='M255 12h1v117h-1z'/%3E%3Cpath fill='%23fff' d='M0 0h1v93H0z'/%3E%3Cpath fill='%23fff' d='M510 12h1v117h-1z'/%3E%3C/svg%3E");
+				left: 50%;
+				bottom: 50%;
+			}
+		}
+
+		&#hydroarrow,
+		&#tank{
+			&:after{
+				width: 101px;
+				height: 1px;
+				background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 101 1'%3E%3Cpath fill='%23fff' d='M0 0h30v1H0z'/%3E%3Cpath fill='%23fff' d='M71 0h30v1H71z'/%3E%3C/svg%3E");
+				right: 100%;
+				top: 50%;
+			}
+		}
+
+		&#tank:after{
+			right: calc(100% + 2px);
+		}
+
+		&#boiler,
+		&#pump-group{
+			&:after{
+				width: 101px;
+				height: 1px;
+				background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 101 1'%3E%3Cpath fill='%23fff' d='M0 0h30v1H0z'/%3E%3Cpath fill='%23fff' d='M71 0h30v1H71z'/%3E%3C/svg%3E");
+				left: calc(100% + 1px);
+				top: 50%;
+			}
+		}
+
+		&#boiler-2{
+			&:after{
+				width: 178px;
+				height: 136px;
+				background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 178 136'%3E%3Cpath fill='%23fff' d='M177 109h1v27h-1z'/%3E%3Cpath d='M0 1V0h173v1H0z' fill='%23fff'/%3E%3Cpath d='M178 67h-1V5h1v62z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M177 5c0-2-2-4-4-4V0c3 0 5 2 5 5h-1z' fill='%23fff'/%3E%3C/svg%3E");
+				right: calc(50% - 1px);
+				bottom: calc(100% + 1px);
+			}
+		}
+
+		&#collector{
+			&:after{
+				width: 1px;
+				height: 101px;
+				background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 101'%3E%3Cpath fill='%23fff' d='M0 76h1v25H0z'/%3E%3Cpath fill='%23fff' d='M0 0h1v31H0z'/%3E%3C/svg%3E");
+				left: 50%;
+				top: calc(100% + 2px);
+			}
+
+			&:before{
+				content: '';
+				display: block;
+				opacity: .3;
+				width: 509px;
+				height: 150px;
+				background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 509 150'%3E%3Cpath fill='%23fff' d='M253 93h1v57h-1z'/%3E%3Cpath fill='%23fff' d='M253 0h1v49h-1z'/%3E%3Cpath fill='%23fff' d='M508 0h1v66h-1z'/%3E%3Cpath fill='%23fff' d='M0 0h1v66H0z'/%3E%3Cpath fill='%23fff' d='M5 70h227v1H5z'/%3E%3Cpath fill='%23fff' d='M275 70h229v1H275z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 66c0 2 2 4 4 4v1c-3 0-5-2-5-5h1z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M508 66c0 2-2 4-4 4v1c3 0 5-2 5-5h-1z' fill='%23fff'/%3E%3C/svg%3E");
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: calc(100% + 2px);
+			}
+
+			&.active{
+				&:before{
+					opacity: .5;
+				}
+			}
+		}
+	}
+
+	.arrow{
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background: linear-gradient(to bottom, rgba(#f9f9f9, .13) 0%, rgba(#7c7c7c, .13) 100%);
+		box-shadow: 0 5px 15px rgba(#1e150e, .25);
+		pointer-events: none;
+		position: absolute;
+		z-index: 2;
+		transition: all $t;
+		outline: none !important;
+
+		.circles{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: scale(0);
+			transition: all $t;
+		}
+
+		.circle{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: 1px solid #fff;
+			transition: all 1s;
+			animation: circles 2s infinite;
+			animation-fill-mode: both;
+			z-index: -1;
+			pointer-events: none;
+
+			&.circle-2{
+				animation-delay: 0.5s;
+			}
+
+			&.circle-3{
+				animation-delay: 1.5s;
+			}
+
+			@keyframes circles{
+				from {
+					opacity: .4;
+				}
+
+				to{
+					opacity: .03;
+					transform: translate(-50%, -50%) scale(1.92);
+				}
+			}
+		}
+
+		&:before{
+			content: '';
+			display: block;
+			width: 16px;
+			height: 16px;
+			background: url("data:image/svg+xml,%3Csvg width='407' height='668' viewBox='0 0 407 668' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 79.1513L77.9754 0.5L406.5 334L77.9753 667.5L0.5 588.849L251.547 334L0.5 79.1513Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat center center / contain;
+			opacity: 0;
+			transition: all $t;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&:after{
+			content: '';
+			display: block;
+			width: 10px;
+			height: 10px;
+			background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342.4 342.4'%3E%3Cpath d='M290 33L119 204l-67-66-52 52 119 119L342 86z' fill='white' /%3E%3C/svg%3E") no-repeat center center / contain;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			transition: all $t;
+		}
+
+		&.active{
+			pointer-events: auto;
+			z-index: 5;
+			background: #e65755;
+
+			.circles{
+				transform: scale(1);
+			}
+
+			&:before{
+				opacity: 1;
+			}
+
+			&.up{
+				&:before{
+					transform: translate(-50%, -50%) rotate(-90deg);
+				}
+			}
+
+			&.down{
+				&:before{
+					transform: translate(-50%, -50%) rotate(90deg);
+				}
+			}
+
+			&.left{
+				&:before{
+					transform: translate(-50%, -50%) rotate(180deg);
+				}
+			}
+
+			&.done{
+				width: 24px;
+				height: 24px;
+				transform: translate(3px, 3px);
+				border-color: #46423d;
+				background: #1b1814;
+				cursor: default;
+				pointer-events: none;
+
+				&:before{
+					opacity: 0;
+				}
+
+				&:after{
+					opacity: 1;
+				}
+
+				.circles{
+					transform: scale(0);
+				}
+			}
+		}
+
+		&#arrow-1{ 	left: 189px; top: 570px; }
+		&#arrow-2{ 	left: 189px; top: 239px; }
+		&#arrow-3{ 	left: 315px; top: 491px; }
+		&#arrow-4{ 	left: 571px; top: 570px; }
+		&#arrow-5{ 	left: 826px; top: 570px; }
+		&#arrow-6{ 	left: 444px; top: 407px; }
+		&#arrow-7{ 	left: 698px; top: 407px; }
+		&#arrow-8{ 	left: 950px; top: 407px; }
+		&#arrow-9{ 	left: 824px; top: 324px; }
+		&#arrow-10{ left: 314px; top: 324px; }
+		&#arrow-11{ left: 442px; top: 239px; }
+		&#arrow-12{ left: 314px; top: 124px; }
+	}
+}

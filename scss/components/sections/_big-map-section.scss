@@ -1,0 +1,9 @@
+.big-map-section{
+	> ymaps{
+		opacity: .7;
+
+		@media screen and (max-width: 991px){
+			height: 400px !important;
+		}
+	}
+}

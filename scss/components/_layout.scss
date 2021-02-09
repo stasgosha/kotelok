@@ -1,0 +1,301 @@
+*,
+*:before,
+*:after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: $main-font;
+	position: relative;
+	background: $body-bg;
+	background-attachment: fixed;
+
+	&.overflow{
+		overflow: hidden;
+	}
+
+	&.modal-visible{
+		overflow: hidden;
+		height: 100vh;
+	}
+
+	img{
+		max-width: unset;
+	}
+}
+
+ul, ol{
+	list-style: none;
+}
+
+button{
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	appearance: none;
+	font-family: $main-font;
+	// outline: none !important;
+}
+
+a, button{
+	text-decoration: none;
+	transition: all $t;
+	// outline: none !important;
+	border: none;
+}
+
+a img{
+	// outline: none !important;
+	border: none !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+
+picture, iframe, figure{
+	display: block;
+}
+
+.wrapper{
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding-top: 106px;
+
+	.home &{
+		padding-top: 0 !important;
+	}
+
+	@media screen and (max-width: 767px){
+		padding-top: 81px;
+	}
+
+	@media screen and (max-width: 424px){
+		padding-top: 61px;
+	}
+
+	.page-content{
+		flex: auto;
+		position: relative;
+		z-index: 5;
+		background: $body-bg;
+	}
+
+	.footer{
+		flex: none;
+	}
+}
+
+.container{
+	width: 100%;
+	padding: 0 15px;
+	margin: 0 auto;
+
+	@media screen and (min-width: 576px){
+		max-width: 555px;
+	}
+
+	@media screen and (min-width: 768px){
+		max-width: 768px;
+	}
+
+	@media screen and (min-width: 992px){
+		max-width: 950px;
+	}
+
+	@media screen and (min-width: 1230px){
+		max-width: 1200px;
+	}
+}
+
+.cards-list{
+	display: grid;
+	grid-gap: 30px;
+
+	@media screen and (max-width: 1229px){
+		grid-gap: 15px;
+	}
+
+	@for $i from 2 through 6 {
+		&.columns-#{$i} {
+			grid-template-columns: repeat(#{$i}, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 1319px){
+		@for $i from 1 through 4 {
+			&.lg-columns-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		@for $i from 1 through 4 {
+			&.md-columns-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		@for $i from 1 through 3 {
+			&.sm-columns-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		@for $i from 1 through 3 {
+			&.xs-columns-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+		}
+	}
+}
+
+.visually-hidden{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.with-side-line{
+	position: relative;
+}
+
+.side-line{
+	width: 1px;
+	height: calc(100% - 50px);
+	position: absolute;
+	right: 50px;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 5;
+	white-space: nowrap;
+
+	@media screen and (max-width: 1229px){
+		display: none;
+	}
+
+	&:before{
+		content: '';
+		width: 1px;
+		height: 125px;
+		background: #fff;
+		opacity: .3;
+		flex: none;
+		margin-bottom: 35px;
+	}
+
+	&:after{
+		content: '';
+		width: 1px;
+		height: auto;
+		background: #fff;
+		opacity: .3;
+		flex: auto;
+		margin-top: 30px;
+	}
+
+	.line-inner{
+		display: flex;
+		align-items: center;
+		position: absolute;
+		left: -2px;
+		top: 155px;
+		transform-origin: 2px center;
+		transform: rotate(90deg);
+
+		&:hover,
+		&:focus{
+			outline: none;
+
+			.line-text{
+				color: $primary;
+			}
+		}
+	}
+
+	.line-circles{
+		width: 4px;
+		height: 4px;
+		background: $primary;
+		border-radius: 50%;
+		position: relative;
+		margin-right: 35px;
+		flex: none;
+
+		.circle{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%) scale(0);
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: 1px solid #fff;
+			transition: all 1.5s;
+			animation: circles 2s infinite;
+			animation-fill-mode: both;
+			z-index: -1;
+			pointer-events: none;
+			// animation-play-state: paused;
+
+			&.circle-2{
+				animation-delay: 0.5s;
+			}
+
+			&.circle-3{
+				animation-delay: 1.5s;
+			}
+
+			@keyframes circles{
+				from {
+					opacity: .4;
+				}
+
+				to{
+					opacity: .03;
+					transform: translate(-50%, -50%) scale(1);
+				}
+			}
+		}
+	}
+
+	.line-text{
+		font-size: 22px;
+		text-transform: uppercase;
+		font-family: $second-font;
+		font-weight: bold;
+		letter-spacing: 0.1em;
+		color: #fff;
+		transition: all $t;
+	}
+
+	.line-holder{
+		display: block;
+		width: 0;
+	}
+
+	.line-arrow{
+		width: 39px;
+		height: 17px;
+		margin-left: 20px;
+		background: url(../img/icons/arrow-right.png) no-repeat center center / contain;
+	}
+}
